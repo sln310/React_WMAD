@@ -14,7 +14,7 @@ const Child = () => {
     <section>
       <div className="wrapper">
         {arry.map((arry) => (
-          <Btn arry={arry} />
+          <Btn key={arry.toString()} arry={arry} />
         ))}
       </div>
     </section>

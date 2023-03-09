@@ -25801,6 +25801,7 @@ var Child = function Child() {
     className: "wrapper"
   }, arry.map(function (arry) {
     return /*#__PURE__*/_react.default.createElement(_Btn.default, {
+      key: arry.toString(),
       arry: arry
     });
   })));
