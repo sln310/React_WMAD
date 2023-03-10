@@ -20,23 +20,31 @@ export default class ChallengeTwo extends Component {
   componentDidMount() {
     //display the student list after 3 seconds
     setTimeout(() => {
-      this.setState({ arr: studentList }, 3000);
-    });
+      this.setState({ arr: studentList });
+    }, 3000);
   }
 
   //random button handler
-  randomize = () => {
+  randomize = (array) => {
+    let i = array.length,
+      j;
+    const newA = [...array];
+
     //shuffle the array and set the state
-    const shuffle = ([...arr]) => {
-      for (let i = arr.length - 1; i >= 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[j]] = [arr[j], arr[i]];
-      }
-      return arr;
-    };
-    this.setState({
-      arr: [...this.shuffle(this.state.arr)],
-    });
+    while (i != 0) {
+      j = Math.floor(Math.random() * i);
+      i--;
+
+      [newA[i], newA[j]] = [newA[j], newA[i]];
+    }
+
+    // shuffle = ([...array]) => {
+    // for (let i = arr.length - 1; i >= 0; i--) {
+    //   j = Math.floor(Math.random() * (i + 1));
+    //   [newArrr[i], newArrr[j]] = [newArrr[j], newArrr[i]];
+    // }
+
+    this.setState({ arr: newA });
   };
 
   render() {
@@ -45,13 +53,21 @@ export default class ChallengeTwo extends Component {
         <h2>Challenge 2</h2>
         <div className="msg">
           <ul>
-            {/* display the list of students by iterating through the array */}
-            {this.state.arr.map((prop) => {
-              return <li key={prop}> {student}</li>;
+            {/* {this.state.arr.map((prop) => {
+              return <li key={prop}>{prop}</li>;
+            })} */}
+
+            {this.state.arr.map((student, index) => {
+              return <li key={index}>{student}</li>;
             })}
           </ul>
         </div>
-        <button className="btn large">Randomize</button>
+        <button
+          className="btn large"
+          onClick={() => this.randomize(studentList)}
+        >
+          Randomize
+        </button>
       </>
     );
   }

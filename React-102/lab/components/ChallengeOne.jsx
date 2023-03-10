@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 //import images
-import left from "../assets/look-left.jpe";
+import left from "../assets/look-left.jpeg";
 import right from "../assets/look-right.jpeg";
 
 class ChallengeOne extends Component {

@@ -25819,7 +25819,11 @@ module.exports = reloadCSS;
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/ChallengeOne.jsx":[function(require,module,exports) {
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"assets/look-left.jpeg":[function(require,module,exports) {
+module.exports = "/look-left.954e7f7b.jpeg";
+},{}],"assets/look-right.jpeg":[function(require,module,exports) {
+module.exports = "/look-right.54c5bb2f.jpeg";
+},{}],"components/ChallengeOne.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25827,7 +25831,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _react = _interopRequireWildcard(require("react"));
-var _lookLeft = _interopRequireDefault(require("..assets/look-left.jpeg"));
+var _lookLeft = _interopRequireDefault(require("../assets/look-left.jpeg"));
 var _lookRight = _interopRequireDefault(require("../assets/look-right.jpeg"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -25865,11 +25869,13 @@ var ChallengeOne = /*#__PURE__*/function (_Component) {
       _this.setState({
         url: _lookLeft.default
       });
+      return;
     });
     _defineProperty(_assertThisInitialized(_this), "handleClickRight", function () {
       _this.setState({
         url: _lookRight.default
       });
+      return;
     });
     return _this;
   }
@@ -25895,7 +25901,7 @@ var ChallengeOne = /*#__PURE__*/function (_Component) {
 }(_react.Component);
 var _default = ChallengeOne;
 exports.default = _default;
-},{}],"components/ChallengeTwo.jsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","../assets/look-left.jpeg":"assets/look-left.jpeg","../assets/look-right.jpeg":"assets/look-right.jpeg"}],"components/ChallengeTwo.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25906,6 +25912,12 @@ var _react = _interopRequireWildcard(require("react"));
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
@@ -25919,7 +25931,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
 function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-var studentList = ['Randall Malfoy', 'Kvothe Black', 'Chun Zorander', 'Leomund Ridcully', 'Rary Stibbons', 'Gandalf Dresden', 'Zeddicus Doom'];
+var studentList = ["Randall Malfoy", "Kvothe Black", "Chun Zorander", "Leomund Ridcully", "Rary Stibbons", "Gandalf Dresden", "Zeddicus Doom"];
 var ChallengeTwo = /*#__PURE__*/function (_Component) {
   _inherits(ChallengeTwo, _Component);
   var _super = _createSuper(ChallengeTwo);
@@ -25935,8 +25947,29 @@ var ChallengeTwo = /*#__PURE__*/function (_Component) {
       arr: []
     });
     //random button handler
-    _defineProperty(_assertThisInitialized(_this), "randomize", function () {
+    _defineProperty(_assertThisInitialized(_this), "randomize", function (array) {
+      var i = array.length,
+        j;
+      var newA = _toConsumableArray(array);
+
       //shuffle the array and set the state
+      while (i != 0) {
+        j = Math.floor(Math.random() * i);
+        i--;
+        var _ref = [newA[j], newA[i]];
+        newA[i] = _ref[0];
+        newA[j] = _ref[1];
+      }
+
+      // shuffle = ([...array]) => {
+      // for (let i = arr.length - 1; i >= 0; i--) {
+      //   j = Math.floor(Math.random() * (i + 1));
+      //   [newArrr[i], newArrr[j]] = [newArrr[j], newArrr[i]];
+      // }
+
+      _this.setState({
+        arr: newA
+      });
     });
     return _this;
   }
@@ -25945,15 +25978,29 @@ var ChallengeTwo = /*#__PURE__*/function (_Component) {
     value:
     //componentDidMount will execute when the page has loaded (this will only run once)
     function componentDidMount() {
+      var _this2 = this;
       //display the student list after 3 seconds
+      setTimeout(function () {
+        _this2.setState({
+          arr: studentList
+        });
+      }, 3000);
     }
   }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
       return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h2", null, "Challenge 2"), /*#__PURE__*/_react.default.createElement("div", {
         className: "msg"
-      }, /*#__PURE__*/_react.default.createElement("ul", null)), /*#__PURE__*/_react.default.createElement("button", {
-        className: "btn large"
+      }, /*#__PURE__*/_react.default.createElement("ul", null, this.state.arr.map(function (student, index) {
+        return /*#__PURE__*/_react.default.createElement("li", {
+          key: index
+        }, student);
+      }))), /*#__PURE__*/_react.default.createElement("button", {
+        className: "btn large",
+        onClick: function onClick() {
+          return _this3.randomize(studentList);
+        }
       }, "Randomize"));
     }
   }]);
@@ -26026,7 +26073,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61414" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54450" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
